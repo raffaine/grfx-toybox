@@ -11,6 +11,13 @@ endif()
 add_executable(DX12MeshSkinningMinimal
     WIN32
     src/main.cpp
+    src/tinygltf.cpp
+)
+
+find_path(TINYGLTF_INCLUDE_DIRS "tiny_gltf.h")
+target_include_directories(DX12MeshSkinningMinimal
+    PRIVATE 
+        ${TINYGLTF_INCLUDE_DIRS}
 )
 
 target_link_libraries(DX12MeshSkinningMinimal
